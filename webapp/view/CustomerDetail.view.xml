@@ -1,0 +1,72 @@
+<mvc:View 
+    controllerName="assignmentweek2.controller.CustomerDetail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns="sap.uxap"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:blockcolor="assignmentweek2.SharedBlocks">
+
+    <m:Page id="page" title="Customer Details">
+        <ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false">
+		<headerTitle>
+			<ObjectPageHeader objectTitle="{CustomerID}">
+			</ObjectPageHeader>
+		</headerTitle>
+
+		<sections>
+			<ObjectPageSection titleUppercase="false" title="Customer Info">
+                    <subSections>
+                        <ObjectPageSubSection>
+                            <blocks>
+                                <m:VBox class="sapUiSmallMargin">
+                                    <f:SimpleForm id="SimpleFormDisplay354"
+                                        editable="false"
+                                        layout="ResponsiveGridLayout">
+                                        <f:content>
+                                            <m:Label text="Company Name" />
+                                            <m:Text text="{CompanyName}" />
+                                            <m:Label text="Contact Name" />
+                                            <m:Text text="{ContactName}" />
+                                            <m:Label text="Contact Title" />
+                                            <m:Text text="{ContactTitle}" />
+                                            <m:Label text="Phone Number" />
+                                            <m:Text text="{Phone}" />
+                                            <m:Label text="Address" />
+                                            <m:Text text="{Address}" />
+                                            <m:Label text="ZIP Code/City" />
+                                            <m:Text text="{PostalCode} {City}" />
+                                            <m:Label text="Country" />
+                                            <m:Text id="countryText" text="{Country}" />
+                                        </f:content>
+                                    </f:SimpleForm>
+                                </m:VBox>
+                            </blocks>
+                        </ObjectPageSubSection> 
+                    </subSections>
+                </ObjectPageSection>
+
+                <ObjectPageSection titleUppercase="false" title="Order Details">
+                    <subSections>
+                        <ObjectPageSubSection titleUppercase="false">
+                            <blocks>
+                                <m:List items="{Orders}">
+                                    <m:StandardListItem 
+                                        title="{OrderID}"
+                                        press="onOrderPress"
+                                        type="Navigation"
+                                        iconDensityAware="false"
+                                        iconInset="false"
+                                        description="{Category/CategoryName}"/>
+                                </m:List>
+                            </blocks>
+                        </ObjectPageSubSection>
+                    </subSections>
+                </ObjectPageSection>
+
+            </sections>
+
+        </ObjectPageLayout>
+    </m:Page>
+</mvc:View>
