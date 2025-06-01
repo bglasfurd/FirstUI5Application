@@ -1,0 +1,15 @@
+<mvc:View controllerName="assignmentweek2.controller.Customers"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <List items="{/Customers}" headerText="Customers">
+            <StandardListItem 
+                title="{CustomerID}" 
+                press="onCustomerPress"
+                type="Navigation"
+                iconDensityAware="false"
+			    iconInset="false"
+                description="{Category/CategoryName}"/>
+        </List>
+    </Page>
+</mvc:View>

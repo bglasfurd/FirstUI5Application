@@ -1,0 +1,17 @@
+<mvc:View
+    controllerName="assignmentweek2.controller.NotFound"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page
+        title="Page Not Found"
+        showNavButton="true"
+        navButtonPress="onNavBack">
+
+        <VBox class="sapUiSmallMargin" justifyContent="Center" alignItems="Center">
+            <!-- <Icon src="sap-icon://error" size="5rem" color="#d9534f" /> -->
+            <Text text="Sorry, the page you are looking for does not exist." class="sapUiLargeMarginTop bigText" />
+            <Button text="Go Back" press="onNavBack" class="sapUiSmallMarginTop" />
+        </VBox>
+    </Page>
+</mvc:View>

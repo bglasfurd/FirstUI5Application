@@ -1,0 +1,113 @@
+<mvc:View 
+    controllerName="assignmentweek2.controller.EmployeeDetail"
+    xmlns="sap.uxap"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+	xmlns:layout="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:m="sap.m">
+
+    <m:Page id="page" title="Employee Details">
+        <ObjectPageLayout id="ObjectPageLayout"
+            enableLazyLoading="true"
+            useIconTabBar="true"
+            showTitleInHeaderContent="true"
+            upperCaseAnchorBar="true"
+            headerContentPinnable="false">
+            <headerTitle>
+                <ObjectPageDynamicHeaderTitle>
+                    <expandedHeading>
+                        <m:Title text="{FirstName} {LastName}" wrapping="true"/>
+                    </expandedHeading>
+
+                    <snappedHeading>
+                        <m:FlexBox fitContainer="true" alignItems="Center">
+                            <m:Avatar src="" class="sapUiTinyMarginEnd"/>
+                            <m:Title text="{FirstName} {LastName}" wrapping="true" />
+                        </m:FlexBox>
+                    </snappedHeading>
+
+                    <expandedContent>
+                        <m:Text text="{Title}"/>
+                    </expandedContent>
+
+                    <snappedContent>
+                        <m:Text text="{Title}"/>
+                    </snappedContent>
+                </ObjectPageDynamicHeaderTitle>
+            </headerTitle>
+
+            <headerContent>
+                <m:FlexBox wrap="Wrap" fitContainer="true" >
+                    <m:Avatar class="sapUiSmallMarginEnd" src="" displaySize="L" />
+
+                    <layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+                        <m:Link text="{HomePhone}"/>
+                        <m:Link text=""/>
+                    </layout:VerticalLayout>
+
+                    <layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+                        <m:Label text="{City}, {Country}"/>
+                    </layout:VerticalLayout>
+                </m:FlexBox>
+            </headerContent>
+
+            <sections>
+			    <ObjectPageSection titleUppercase="false" title="Personal Information" >
+                    <subSections>
+                        <ObjectPageSubSection>
+                            <blocks>
+                                <m:VBox class="sapUiSmallMargin">
+                                    <f:SimpleForm
+                                        editable="false"
+                                        layout="ResponsiveGridLayout">
+                                        <f:content>
+                                            <m:Label text="EmployeeID" />
+                                            <m:Text text="{EmployeeID}" />
+                                            <m:Label text="Name" />
+                                            <m:Text text="{TitleOfCourtesy}{FirstName} {LastName}" />
+                                            <m:Label text="Birth Date" />
+                                            <m:Text 
+                                                core:require="{ formatter: 'assignmentweek2/utils/formatter' }"
+                                                text="{path: 'BirthDate', formatter: 'formatter.formatDate' }" />
+                                            <m:Label text="Address" />
+                                            <m:Text text="{Address}, {City}, {Country}" />
+                                            <m:Label text="Phone Number" />
+                                            <m:Text text="{HomePhone}" />
+                                        </f:content>
+                                    </f:SimpleForm>
+                                </m:VBox>
+                            </blocks>
+                        </ObjectPageSubSection> 
+                    </subSections>
+                </ObjectPageSection>
+
+                <ObjectPageSection titleUppercase="false" title="Company Information">
+                    <subSections>
+                        <ObjectPageSubSection titleUppercase="false">
+                            <blocks>
+                                <m:VBox class="sapUiSmallMargin">
+                                    <f:SimpleForm
+                                        editable="false"
+                                        layout="ResponsiveGridLayout">
+                                        <f:content>
+                                            <m:Label text="Title" />
+                                            <m:Text text="{Title}" />
+                                            <m:Label text="Hire Date" />
+                                            <m:Text 
+                                                core:require="{ formatter: 'assignmentweek2/utils/formatter' }"
+                                                text="{path: 'HireDate', formatter: 'formatter.formatDate' }" />
+                                            <m:Label text="Extension" />
+                                            <m:Text text="{Extension}" />
+                                        </f:content>
+                                    </f:SimpleForm>
+                                </m:VBox>
+                            </blocks>
+                        </ObjectPageSubSection>
+                    </subSections>
+                </ObjectPageSection>
+
+            </sections>
+        </ObjectPageLayout>
+    </m:Page>
+</mvc:View>

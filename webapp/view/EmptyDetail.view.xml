@@ -1,0 +1,9 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="assignmentweek2.controller.EmptyDetail">
+
+    <VBox class="sapUiSmallMargin sapUiContentPadding">
+        <Text text="Please select an invoice from the list." class="bigText sapUiSmallMarginTop sapUiTinyMarginBottom" />
+    </VBox>
+</mvc:View>

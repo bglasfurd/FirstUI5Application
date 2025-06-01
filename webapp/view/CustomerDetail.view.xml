@@ -16,7 +16,7 @@
 		</headerTitle>
 
 		<sections>
-			<ObjectPageSection titleUppercase="false" title="Customer Info">
+			<ObjectPageSection titleUppercase="false" title="Customer Info" >
                     <subSections>
                         <ObjectPageSubSection>
                             <blocks>
@@ -51,15 +51,30 @@
                     <subSections>
                         <ObjectPageSubSection titleUppercase="false">
                             <blocks>
-                                <m:List items="{Orders}">
-                                    <m:StandardListItem 
-                                        title="{OrderID}"
-                                        press="onOrderPress"
-                                        type="Navigation"
-                                        iconDensityAware="false"
-                                        iconInset="false"
-                                        description="{Category/CategoryName}"/>
-                                </m:List>
+                                <m:Table
+                                    id="ordersTable"
+                                    items="{Orders}"
+                                    inset="true"
+                                    mode="None"
+                                    width="100%"
+                                    fixedLayout="true"
+                                    class="sapUiResponsiveMargin">
+
+                                    <m:columns>
+                                        <m:Column>
+                                            <m:Text text="Order ID" />
+                                        </m:Column>
+                                    </m:columns>
+
+                                    <m:items>
+                                        <m:ColumnListItem type="Navigation"  press="onDefaultDialogPress">
+                                            <m:cells>
+                                                <m:Text text="{OrderID}" /> 
+                                            </m:cells>
+                                        </m:ColumnListItem>
+                                    </m:items>
+                                </m:Table>
+
                             </blocks>
                         </ObjectPageSubSection>
                     </subSections>

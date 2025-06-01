@@ -1,0 +1,91 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+    controllerName="assignmentweek2.controller.InvoiceDetail">
+
+    <Page
+        id="invoiceDetailPage"
+        title="Invoice Detail"
+        showNavButton="true"
+        navButtonPress=".onNavBack">
+
+        <f:SimpleForm
+            id="invoiceForm"
+            layout="ResponsiveGridLayout"
+            editable="false"
+            class="sapUiSmallMargin"
+            columnsM="2"
+            columnsL="2"
+            columnsXL="2">
+
+            <!-- Column 1 -->
+            <Label text="Order ID" />
+            <Text text="{OrderID}" />
+
+            <Label text="Order Date" />
+            <Text
+                core:require="{ formatter: 'assignmentweek2/utils/formatter' }"
+                text="{path: 'OrderDate', formatter: 'formatter.formatDate'}" />
+
+            <Label text="Required Date" />
+            <Text 
+                core:require="{ formatter: 'assignmentweek2/utils/formatter' }"
+                text="{path: 'RequiredDate', formatter: 'formatter.formatDate'}" />
+
+            <Label text="Shipped Date" />
+            <Text 
+                core:require="{ formatter: 'assignmentweek2/utils/formatter' }"
+                text="{path: 'ShippedDate', formatter: 'formatter.formatDate'}" />
+
+            <Label text="Freight" />
+            <Text text="{Freight}" />
+
+            <Label text="Shipper Name" />
+            <Text text="{ShipperName}" />
+
+            <Label text="Salesperson" />
+            <Text text="{Salesperson}" />
+
+            <Label text="Customer ID" />
+            <Text text="{CustomerID}" />
+
+            <Label text="Customer Name" />
+            <Text text="{CustomerName}" />
+
+            <Label text="Address" />
+            <Text text="{Address}, {City} - {PostalCode}, {Country}" />
+
+            <Label text="Ship Name" />
+            <Text text="{ShipName}" />
+
+            <Label text="Ship Address" />
+            <Text text="{ShipAddress}, {ShipCity} - {ShipPostalCode}, {ShipCountry}" />
+
+            <Label text="Product ID" />
+            <Text text="{ProductID}" />
+
+            <Label text="Product Name" />
+            <Text text="{ProductName}" />
+
+            <Label text="Unit Price" />
+            <Text
+                core:require="{ formatter: 'assignmentweek2/utils/formatter' }"
+                text="{ path: 'UnitPrice', formatter: 'formatter.formatUnitPrice' }" />         
+
+            <Label text="Quantity" />
+            <Text text="{Quantity}" />
+
+            <Label text="Discount" />
+            <Text text="{Discount}%" />
+
+            <Label text="Extended Price" />
+            <Text
+                core:require="{ formatter: 'assignmentweek2/utils/formatter' }"
+                text="{ path: 'ExtendedPrice', formatter: 'formatter.formatUnitPrice' }" />  
+
+        </f:SimpleForm>
+
+    </Page>
+</mvc:View>

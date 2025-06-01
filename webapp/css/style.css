@@ -1,5 +1,8 @@
-/* Enter your custom styles here */
+.largeIcon .sapUiIcon {
+    font-size: 5rem; /* Increase this value as needed */
+}
 
-.largeText .sapMSLITitleOnly {
-    font-size: 2rem; /* or 20px, or larger */
+.bigText {
+    font-size: 1.5rem; /* or 24px, or whatever size you want */
+    font-weight: bold;
 }

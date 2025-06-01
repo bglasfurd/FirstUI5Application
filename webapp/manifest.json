@@ -50,7 +50,8 @@
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
-        "sap.uxap": {}
+        "sap.uxap": {},
+        "sap.ui.layout": {}
       }
     },
     "contentDensities": {
@@ -103,15 +104,59 @@
           "target": "CustomerDetail"
         },
         {
-          "pattern": "customer/order{OrderID}",
-          "name": "orderDetail",
-          "target": "OrderDetail"
+          "pattern": "customer",
+          "name": "customers",
+          "target": "Customers"
+        },
+        {
+          "pattern": "products",
+          "name": "products",
+          "target": "Products"
+        },
+        {
+          "pattern": "employees",
+          "name": "employees",
+          "target": "Employees"
+        },
+        {
+          "pattern": "employees/{EmployeeID}",
+          "name": "employeeDetail",
+          "target": "EmployeeDetail"
+        },
+        {
+          "pattern": "mockJSON",
+          "name": "mockJSON",
+          "target": "MockJSON"
+        },
+        {
+          "pattern": "invoices",
+          "name": "invoices",
+          "target": "Invoices"
+        },
+        {
+          "pattern": ":all*:",  
+          "name": "notFound",
+          "target": "notFound"
         }
+
+        
       ],
       "targets": {
         "TargetView1": {
           "id": "View1",
           "name": "View1"
+        },
+        "Customers": {
+          "id": "Customers",
+          "name": "Customers"
+        },
+        "Products": {
+          "id": "Products",
+          "name": "Products"
+        },
+        "Employees": {
+          "id": "Employees",
+          "name": "Employees"
         },
         "CustomerDetail": {
           "id": "CustomerDetail",
@@ -119,9 +164,27 @@
           "viewLevel": 1,
           "viewType": "XML"
         },
-        "OrderDetail" : {
-          "id": "OrderDetail",
-          "name": "OrderDetail",
+        "EmployeeDetail": {
+          "id": "EmployeeDetail",
+          "name": "EmployeeDetail",
+          "viewLevel": 1,
+          "viewType": "XML"
+        },
+        "MockJSON": {
+          "id": "MockJSON",
+          "name": "MockJSON",
+          "viewLevel": 1,
+          "viewType": "XML"
+        },
+        "Invoices": {
+          "id": "Invoices",
+          "name": "Invoices",
+          "viewLevel": 1,
+          "viewType": "XML"
+        },
+        "notFound": {
+          "name": "NotFound",
+          "id": "notFound",
           "viewLevel": 1,
           "viewType": "XML"
         }

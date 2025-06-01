@@ -2,14 +2,60 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
-        <List items="{/Customers}" headerText="Customers">
-            <StandardListItem 
-                title="{CustomerID}" 
-                press="onCustomerPress"
-                type="Navigation"
-                iconDensityAware="false"
-			    iconInset="false"
-                description="{Category/CategoryName}"/>
-        </List>
+        <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Customers" press="goToCustomers">
+            <TileContent>
+                 <ImageContent
+                    class="largeIcon"
+                    src="sap-icon://account"
+                    description="Icon"
+                    press="press">
+                </ImageContent>
+            </TileContent>
+        </GenericTile>
+
+        <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Products" press="goToProducts">
+            <TileContent>
+                 <ImageContent
+                    class="largeIcon"
+                    src="sap-icon://product"
+                    description="Icon"
+                    press="press">
+                </ImageContent>
+            </TileContent>
+        </GenericTile>
+
+        <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Employees" press="goToEmployees">
+            <TileContent>
+                 <ImageContent
+                    class="largeIcon"
+                    src="sap-icon://employee"
+                    description="Icon"
+                    press="press">
+                </ImageContent>
+            </TileContent>
+        </GenericTile>
+
+        <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Mock JSON Data" press="goToMockJSON">
+            <TileContent>
+                 <ImageContent
+                    class="largeIcon"
+                    src="sap-icon://business-objects-experience"
+                    description="Icon"
+                    press="press">
+                </ImageContent>
+            </TileContent>
+        </GenericTile>
+
+        <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Invoices" press="goToInvoices">
+            <TileContent>
+                 <ImageContent
+                    class="largeIcon"
+                    src="sap-icon://screen-split-one"
+                    description="Icon"
+                    press="press">
+                </ImageContent>
+            </TileContent>
+        </GenericTile>
+
     </Page>
 </mvc:View>

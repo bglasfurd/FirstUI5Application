@@ -1,0 +1,40 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns:formatter="assignmentweek2.utils.formatter">
+
+    <Dialog
+        id="orderDialog"
+        title="Order Details"
+        contentWidth="500px"
+        resizable="true"
+        draggable="true">
+
+        <List id="orderDetailsList">
+            <CustomListItem>
+                <f:SimpleForm layout="ResponsiveGridLayout" editable="false">
+                    
+                    <Label text="Product ID" />
+                    <Text text="{ProductID}" />
+                    
+                    <Label text="Unit Price"/>
+                    <Text
+                        core:require="{ formatter: 'assignmentweek2/utils/formatter' }"
+                        text="{ path: 'UnitPrice', formatter: 'formatter.formatUnitPrice' }" />
+
+                    <Label text="Quantity" />
+                    <Text text="{Quantity}" />
+                    
+                    <Label text="Discount" />
+                    <Text text="{Discount}%" />
+                </f:SimpleForm>
+            </CustomListItem>
+        </List>
+
+        <endButton>
+            <Button icon="sap-icon://decline" text="Close" press=".onDialogClose" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

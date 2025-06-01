@@ -1,0 +1,54 @@
+<mvc:View controllerName="assignmentweek2.controller.MockJSON"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page">
+        <m:VBox xmlns:m="sap.m" class="sapUiSmallMargin">
+            <m:Label text="Name" />
+            <m:Input id="name" value="{
+                    path : 'formModel>/formData/name',
+                    type : 'sap.ui.model.type.String',
+                    constraints : {
+                        minLength: 1,
+                        maxLength: 25
+                    }
+                }" width="400px" valueState="{= ${formModel>/formData/name} ? 'None' : 'Error'}" valueStateText="This field can't be blank"/>
+            <m:Label text="Age" />
+            <m:Input id="age" value="{
+                    path : 'formModel>/formData/age',
+                    type : 'sap.ui.model.type.Integer',
+                    constraints : {
+                        minLength: 1,
+                        maxLength: 10
+                    }
+                }" type="Number" width="100px"/>
+            <m:HBox class="sapUiMediumMarginTop">
+                <m:Button text="Submit" press=".onSubmit" type="Emphasized" class="sapUiMediumMarginEnd"/>
+                <m:Button text="Reset" press=".onReset" type="Emphasized" />
+            </m:HBox>
+
+            <m:Table
+                items="{formModel>/entries}"
+                class="sapUiLargeMarginTop">
+                
+                <m:columns>
+                    <m:Column><m:Text text="Name" /></m:Column>
+                    <m:Column><m:Text text="Age" /></m:Column>
+                    <m:Column><m:Text text="Delete" /></m:Column>
+                </m:columns>
+                
+                <m:items>
+                    <m:ColumnListItem>
+                    <m:cells>
+                        <m:Text text="{formModel>name}" />
+                        <m:Text text="{formModel>age}" />
+                        <m:HBox>
+                        <m:Button text="Delete" press=".onDeleteEntry" type="Critical" class=""/>
+                        </m:HBox>
+                    </m:cells>
+                    </m:ColumnListItem>
+                </m:items>
+                </m:Table>
+        </m:VBox>
+
+    </Page>
+</mvc:View>

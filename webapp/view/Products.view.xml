@@ -1,0 +1,114 @@
+<mvc:View controllerName="assignmentweek2.controller.Products"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+    xmlns:formatter="assignmentweek2.utils.formatter">
+    <Page id="page">
+        <content>
+
+			<!-- <Table
+				rows="{/Products}"
+				paste="onPaste"
+				ariaLabelledBy="title">
+				<columns>
+					<Column width="11rem">
+						<m:Label text="Product Name" />
+						<template>
+							<m:Text text="{ProductID}" wrapping="false" />
+						</template>
+					</Column>
+					<Column width="11rem">
+						<m:Label text="Product Name" />
+						<template>
+							<m:Text text="{ProductName}"/>
+						</template>
+					</Column>
+					<Column width="6rem" hAlign="End">
+						<m:Label text="Unit Price" />
+						<template>
+							<m:Text text="{UnitPrice}" />
+						</template>
+					</Column>
+					<Column width="9rem">
+						<m:Label text="Units In Stock" />
+						<template>
+                            <m:Text text="{UnitsInStock}" />
+						</template>
+					</Column>
+				</columns>
+			</Table> -->
+
+            <Table id="idProductsTable"
+                inset="false"
+                items="{path: '/Products'}">
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <content>
+                            <Title text="Products" level="H2"/>
+                        </content>
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column
+                        width="25em">
+                        <Text text="Product ID" design="Bold"/>
+                    </Column>
+                    <Column
+                        width="25em"
+                        demandPopin="true">
+                        <Text text="Product Name" />
+                    </Column>
+                    <Column
+                        width="25em"
+                        demandPopin="true">
+                        <Text text="Unit Price" />
+                    </Column>
+                    <Column
+                        width="22em"
+                        demandPopin="true"
+                        hAlign="Begin">
+                        <Text text="Units In Stock" />
+                    </Column>
+                    <Column
+                        hAlign="Begin">
+                        <Text text="Quantity Per Unit" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem vAlign="Middle">
+                        <cells>
+                            <ObjectIdentifier
+                                text="{ProductID}"/>
+                            <Text
+                                text="{ProductName}" />
+                            <Text
+                                core:require="{ formatter: 'assignmentweek2/utils/formatter' }"
+                                text="{ path: 'UnitPrice', formatter: 'formatter.formatUnitPrice' }" />
+                            <Text
+                                text="{UnitsInStock}" />
+                            <Text
+                                text="{QuantityPerUnit}" />
+                            <!-- <ObjectNumber
+                                number="{WeightMeasure}"
+                                unit="{WeightUnit}"
+                                state="{
+                                    parts: [
+                                        {path: 'WeightMeasure'},
+                                        {path: 'WeightUnit'}
+                                    ]
+                                }" /> -->
+                            <!-- <ObjectNumber
+                                number="{
+                                    parts:[{path:'Price'},{path:'CurrencyCode'}],
+                                    type: 'sap.ui.model.type.Currency',
+                                    formatOptions: {showMeasure: false}
+                                }"
+                                unit="{CurrencyCode}" /> -->
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+		</content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,34 @@
+<mvc:View
+    controllerName="assignmentweek2.controller.Invoices"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true">
+
+    <Page id="page" title="Invoices">
+        <SplitApp
+            id="SplitAppDemo"
+            initialDetail="emptyDetail"
+            initialMaster="master">
+
+            <detailPages>
+                <mvc:XMLView id="emptyDetail" viewName="assignmentweek2.view.EmptyDetail" />
+                <mvc:XMLView id="invoiceDetail" viewName="assignmentweek2.view.InvoiceDetail" />
+            </detailPages>
+            
+            <masterPages>
+                <Page
+                    id="master"
+                    title="Invoices"
+                    backgroundDesign="List">
+                    <List items="{/Invoices}">
+                        <StandardListItem
+                            title="{OrderID}"
+                            type="Navigation"
+                            press=".onPressGoToMaster" />
+                    </List>
+                </Page>
+            </masterPages>
+        </SplitApp>
+
+    </Page>
+</mvc:View>

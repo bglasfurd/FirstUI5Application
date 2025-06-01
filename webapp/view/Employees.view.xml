@@ -1,0 +1,15 @@
+<mvc:View controllerName="assignmentweek2.controller.Employees"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page">
+        <List items="{/Employees}" headerText="Employees">
+            <StandardListItem 
+                title="{FirstName} {LastName}" 
+                press="onEmployeePress"
+                type="Navigation"
+                iconDensityAware="false"
+			    iconInset="false"
+                description="{Title}"/>
+        </List>
+    </Page>
+</mvc:View>
