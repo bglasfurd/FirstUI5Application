@@ -18,5 +18,10 @@ sap.ui.define([
                 path: sPath
             });
         },
+
+        formatPhoto: function(photo){
+            // return "data:image/png;base64," + photo.substring(104);
+        }
+
     });
 });

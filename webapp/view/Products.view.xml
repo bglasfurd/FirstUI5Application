@@ -6,39 +6,6 @@
     xmlns:formatter="assignmentweek2.utils.formatter">
     <Page id="page">
         <content>
-
-			<!-- <Table
-				rows="{/Products}"
-				paste="onPaste"
-				ariaLabelledBy="title">
-				<columns>
-					<Column width="11rem">
-						<m:Label text="Product Name" />
-						<template>
-							<m:Text text="{ProductID}" wrapping="false" />
-						</template>
-					</Column>
-					<Column width="11rem">
-						<m:Label text="Product Name" />
-						<template>
-							<m:Text text="{ProductName}"/>
-						</template>
-					</Column>
-					<Column width="6rem" hAlign="End">
-						<m:Label text="Unit Price" />
-						<template>
-							<m:Text text="{UnitPrice}" />
-						</template>
-					</Column>
-					<Column width="9rem">
-						<m:Label text="Units In Stock" />
-						<template>
-                            <m:Text text="{UnitsInStock}" />
-						</template>
-					</Column>
-				</columns>
-			</Table> -->
-
             <Table id="idProductsTable"
                 inset="false"
                 items="{path: '/Products'}">
@@ -85,26 +52,10 @@
                             <Text
                                 core:require="{ formatter: 'assignmentweek2/utils/formatter' }"
                                 text="{ path: 'UnitPrice', formatter: 'formatter.formatUnitPrice' }" />
-                            <Text
-                                text="{UnitsInStock}" />
+
+                            <Text text="{= ${UnitsInStock} &lt; 10 ? ${UnitsInStock} + ' (Low Stock)' : ${UnitsInStock} }" />
                             <Text
                                 text="{QuantityPerUnit}" />
-                            <!-- <ObjectNumber
-                                number="{WeightMeasure}"
-                                unit="{WeightUnit}"
-                                state="{
-                                    parts: [
-                                        {path: 'WeightMeasure'},
-                                        {path: 'WeightUnit'}
-                                    ]
-                                }" /> -->
-                            <!-- <ObjectNumber
-                                number="{
-                                    parts:[{path:'Price'},{path:'CurrencyCode'}],
-                                    type: 'sap.ui.model.type.Currency',
-                                    formatOptions: {showMeasure: false}
-                                }"
-                                unit="{CurrencyCode}" /> -->
                         </cells>
                     </ColumnListItem>
                 </items>

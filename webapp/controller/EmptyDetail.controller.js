@@ -3,7 +3,7 @@ sap.ui.define([
 ], (Controller) => {
     "use strict";
 
-    return Controller.extend("assignmentweek2.controller.EmptyDetail", {
+    return Controller.extend("assignmentweek2.controller.EmployeeDetail", {
         onInit() {
 
 		},
